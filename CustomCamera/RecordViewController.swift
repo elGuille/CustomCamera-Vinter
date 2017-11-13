@@ -2,7 +2,7 @@
 //  RecordViewController.swift
 //  CustomCamera
 //
-//  Created by Vinter on 10/4/17.
+//  Created by Vinter on 11/12/17.
 //  Copyright © 2017 Vinter. All rights reserved.
 //
 
