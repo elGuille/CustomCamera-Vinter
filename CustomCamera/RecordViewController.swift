@@ -2,8 +2,8 @@
 //  RecordViewController.swift
 //  CustomCamera
 //
-//  Created by Zero2Launch on 10/4/17.
-//  Copyright © 2017 Zero2Launch. All rights reserved.
+//  Created by Vinter on 10/4/17.
+//  Copyright © 2017 Vinter. All rights reserved.
 //
 
 import UIKit
@@ -13,6 +13,8 @@ import AVKit
 class RecordViewController: UIViewController, AVCaptureFileOutputRecordingDelegate {
     
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var recordButtonB: UIButton!
+    @IBOutlet weak var recordButtonC: UIButton!
     
     let captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?
@@ -106,7 +108,7 @@ class RecordViewController: UIViewController, AVCaptureFileOutputRecordingDelega
                 self.recordButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             }, completion: nil)
             
-            let outputPath = NSTemporaryDirectory() + "output.mov"
+            let outputPath = NSTemporaryDirectory() + "A.mov"
             let outputFileURL = URL(fileURLWithPath: outputPath)
             videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
         } else {
@@ -120,6 +122,55 @@ class RecordViewController: UIViewController, AVCaptureFileOutputRecordingDelega
         }
     }
     
+    
+    @IBAction func captureB(_ sender: UIButton) {
+        
+        if !isRecording {
+            isRecording = true
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { () -> Void in
+                self.recordButtonB.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            }, completion: nil)
+            
+            let outputPath = NSTemporaryDirectory() + "B.mov"
+            let outputFileURL = URL(fileURLWithPath: outputPath)
+            videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
+        } else {
+            isRecording = false
+            
+            UIView.animate(withDuration: 0.5, delay: 1.0, options: [], animations: { () -> Void in
+                self.recordButtonB.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }, completion: nil)
+            recordButtonB.layer.removeAllAnimations()
+            videoFileOutput?.stopRecording()
+        }
+        
+    }
+    
+    
+    @IBAction func captureC(_ sender: UIButton) {
+        
+        if !isRecording {
+            isRecording = true
+            
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat, .autoreverse, .allowUserInteraction], animations: { () -> Void in
+                self.recordButtonC.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            }, completion: nil)
+            
+            let outputPath = NSTemporaryDirectory() + "C.mov"
+            let outputFileURL = URL(fileURLWithPath: outputPath)
+            videoFileOutput?.startRecording(to: outputFileURL, recordingDelegate: self)
+        } else {
+            isRecording = false
+            
+            UIView.animate(withDuration: 0.5, delay: 1.0, options: [], animations: { () -> Void in
+                self.recordButtonC.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            }, completion: nil)
+            recordButtonC.layer.removeAllAnimations()
+            videoFileOutput?.stopRecording()
+        }
+        
+    }
     
     // MARK: - AVCaptureFileOutputRecordingDelegate methods
     func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {

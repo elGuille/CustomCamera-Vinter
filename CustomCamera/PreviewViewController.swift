@@ -2,8 +2,8 @@
 //  PreviewViewController.swift
 //  CustomCamera
 //
-//  Created by DUYET on 6/8/17.
-//  Copyright © 2017 Zero2Launch. All rights reserved.
+//  Created by Vinter on 6/8/17.
+//  Copyright © 2017 Vinter. All rights reserved.
 //
 
 import UIKit

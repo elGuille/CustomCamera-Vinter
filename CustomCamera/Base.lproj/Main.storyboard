@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QkR-te-BqE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QkR-te-BqE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -142,26 +142,73 @@
                                     <action selector="captureWithSender:" destination="QkR-te-BqE" eventType="touchUpInside" id="o7x-jp-Mud"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJc-Cx-56c">
+                                <rect key="frame" x="270" y="592" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99936085939407349" green="0.14975595474243164" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="dwP-7i-3qh"/>
+                                    <constraint firstAttribute="height" constant="50" id="v8g-TV-OWE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="captureC:" destination="QkR-te-BqE" eventType="touchUpInside" id="lRW-YB-QA8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doy-Pw-VEX">
+                                <rect key="frame" x="54" y="592" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.99936085939999997" green="0.1497559547" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="GTW-9S-6Zx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="GY3-Jx-w0t"/>
+                                    <constraint firstAttribute="height" constant="50" id="HE4-gT-QtT"/>
+                                    <constraint firstAttribute="width" constant="50" id="LkE-qB-vZy"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="captureB:" destination="QkR-te-BqE" eventType="touchUpInside" id="qO1-DP-mBr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Noq-YF-0aj" firstAttribute="top" secondItem="UJc-Cx-56c" secondAttribute="bottom" constant="25" id="4UK-qe-eDe"/>
+                            <constraint firstItem="S8V-D8-V7Z" firstAttribute="leading" secondItem="doy-Pw-VEX" secondAttribute="trailing" constant="53" id="Pxj-3t-neY"/>
+                            <constraint firstItem="Noq-YF-0aj" firstAttribute="top" secondItem="doy-Pw-VEX" secondAttribute="bottom" constant="25" id="Sre-ew-yzb"/>
                             <constraint firstItem="S8V-D8-V7Z" firstAttribute="centerX" secondItem="k7Y-1e-etJ" secondAttribute="centerX" id="TJv-yO-O5l"/>
+                            <constraint firstItem="Noq-YF-0aj" firstAttribute="top" secondItem="UJc-Cx-56c" secondAttribute="bottom" constant="25" id="bHC-s0-uSe"/>
+                            <constraint firstItem="UJc-Cx-56c" firstAttribute="leading" secondItem="S8V-D8-V7Z" secondAttribute="trailing" constant="53" id="c4g-ZH-Twa"/>
                             <constraint firstItem="Noq-YF-0aj" firstAttribute="top" secondItem="S8V-D8-V7Z" secondAttribute="bottom" constant="20" id="rim-Qs-jt6"/>
+                            <constraint firstItem="UJc-Cx-56c" firstAttribute="leading" secondItem="S8V-D8-V7Z" secondAttribute="trailing" constant="53" id="sZb-fm-8aP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="recordButton" destination="S8V-D8-V7Z" id="Y2N-eA-8mU"/>
+                        <outlet property="recordButtonB" destination="doy-Pw-VEX" id="Cuu-G0-2z9"/>
+                        <outlet property="recordButtonC" destination="UJc-Cx-56c" id="nF1-Ij-lXx"/>
                         <segue destination="QSg-qv-Br7" kind="presentation" identifier="playVideo" id="n7r-7Q-XgB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ZK-DQ-gXP" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="-781"/>
+            <point key="canvasLocation" x="36" y="-781"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="rSf-td-LKh">
             <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="QSg-qv-Br7" sceneMemberID="viewController"/>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="QSg-qv-Br7" sceneMemberID="viewController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showsPlaybackControls" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="contentOverlayView" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </avPlayerViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gw1-2L-kbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="-781"/>
